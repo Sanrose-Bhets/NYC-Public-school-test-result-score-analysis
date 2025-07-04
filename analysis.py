@@ -26,6 +26,10 @@ stats_borrowed = schooling.groupby("borough").agg(
     std_SAT=('total_SAT', 'std')
 ).round(2).sort_values("std_SAT", ascending=False)
 
-largest_std_dev = stats_borrowed.iloc[0]
+stats_borrowed = stats_borrowed.reset_index()[['borough', 'num_schools', 'average_SAT', 'std_SAT']]
+
+largest_std_dev = stats_borrowed[stats_borrowed["std_SAT"]==stats_borrowed["std_SAT"].max()]
+
+print(largest_std_dev)
 
 print(largest_std_dev)
