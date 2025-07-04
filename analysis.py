@@ -32,4 +32,3 @@ largest_std_dev = stats_borrowed[stats_borrowed["std_SAT"]==stats_borrowed["std_
 
 print(largest_std_dev)
 
-print(largest_std_dev)
